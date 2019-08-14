@@ -1,8 +1,5 @@
 # Lancer le projet en local
-
 git clone
-
-<br>
 
 <code>cd digitevent</code>
 <br>
@@ -10,6 +7,7 @@ git clone
 <br>
 <code>npm run dev</code>
 <br>
+
 Ensuite coté back :
 <br>
 <code>cd api</code>
