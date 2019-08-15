@@ -54,7 +54,6 @@
     methods: {
 
       submit: function (dates) {
-
         let newDate;
         let newDates = []
 
@@ -62,10 +61,9 @@
         this.errors = []
         this.dates = []
         this.datas = []
-
-
+        
         //serialize
-        // TRIM
+        // trim
         dates = dates.replace(/ /g, "");
         // split by date
         dates = dates.split(',')
@@ -85,15 +83,15 @@
         this.dates = newDates;
 
         // check if the dates are valide
-        this.dateIsValid()
+        if (this.dateIsValid()) {
         // if its valid go fetch
-        if (!this.errors.length > 0) {
           this.fetch(this.dates)
         }
       },
       // function that check if a date is valid
       dateIsValid() {
         let monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        let valid = true;
 
         this.dates.forEach((date, index) => {
           // check if date.day is set
@@ -103,6 +101,7 @@
               message: 'le jour n\'est pas définit',
               index: index
             })
+            valid = false
           }
           // check if the month is valid
           if (!(date.month > 0 && date.month < 13)) {
@@ -110,6 +109,7 @@
               message: 'erreur sur le mois',
               index: index
             })
+            valid = false
           }
           // check if the day is valid 
           if (date.day < 0 || date.day > monthLength[date.month - 1]) {
@@ -117,8 +117,10 @@
               message: 'erreur sur le jour',
               index: index
             })
+            valid = false
           }
         });
+        return valid;
       },
       // take an array of object as parameter => dates[{day,month}] and fetch a fact corresponding to the date 
       fetch(dates) {
