@@ -8,7 +8,6 @@ class Fact {
     this.content="";
   }
 
-
   dateIsValid() {
     // check month first
     if (!(this.month > 0 && this.month < 13)) {
