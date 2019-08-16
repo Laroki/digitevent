@@ -11,3 +11,15 @@
     border: 1px solid blue;
   }
 }
+
+.error{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 50vw;
+  background: red;
+  text-align: center;
+  padding: 5%;
+}
+
