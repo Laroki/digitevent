@@ -133,6 +133,10 @@ $formwidthsmall:80vw;
 }
 
 
+$factwidth:25vw;
+$factwidthmedium:40vw;
+$factwidthsmall:60vw;
+
 .facts {
   display: flex;
   justify-content: center;
@@ -140,17 +144,22 @@ $formwidthsmall:80vw;
   top: calc(20vh + 70px);
   right: 50%;
   transform: translateX(50%);
-  width: 35vw;
+  width: $factwidth;
   height: 70%;
+
+  @media screen and (max-width: $break-medium) {
+    width:$factwidthmedium;
+  }
+
+  @media screen and (max-width: $break-small) {
+    width:$factwidthsmall;
+  }
 }
 
-$factwidth:30vw;
-$factwidthmedium:40vw;
-$factwidthsmall:60vw;
 
 .title {
   position: absolute;
-  width:$factwidth;
+  width:100%;
   top: -15%;
   display: flex;
   padding: 8%;
@@ -166,14 +175,10 @@ $factwidthsmall:60vw;
     margin-bottom: 4%;
   }
 
-  @media screen and (max-width: $break-medium) {
-    width:$factwidthmedium;
-  }
 
   @media screen and (max-width: $break-small) {
     top: -14%;
     padding: 10%;
-    width:$factwidthsmall;
   }
 
 }
@@ -190,7 +195,7 @@ $factwidthsmall:60vw;
 
 
 .fact {
-  width: $factwidth;
+  width: 100%;
   line-height: 20px;
   animation: appear 1s;
   margin-top: 8%;
@@ -212,11 +217,7 @@ $factwidthsmall:60vw;
     transform: scale(1.2);
   }
 
-  @media screen and (max-width: $break-medium) {
-    width: $factwidthmedium;
-  }
-
   @media screen and (max-width: $break-small) {
-    width: $factwidthsmall;
+    margin-top: 12%;
   }
 }
