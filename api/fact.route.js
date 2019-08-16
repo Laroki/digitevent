@@ -24,7 +24,7 @@ factsRoutes.route('/:month/:day').get(function (req, res) {
       return res.json(fact.json());
     });
   } 
-  // if its not return errors
+  // if its not, return errors
   else 
   {
     return res.json(fact.errors)
