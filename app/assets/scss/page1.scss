@@ -148,19 +148,22 @@ $formwidthsmall:80vw;
   position: absolute;
   top: -15%;
   display: flex;
-  padding: 5%;
+  padding: 8%;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   background: black;
   text-align: center;
+  transition: all 0.2s;
 
   h1 {
     font-weight: lighter;
+    margin-bottom: 4%;
   }
   @media screen and (max-width: $break-small) {
     top: -14%;
     padding: 10%;
+    width:50vw;
   }
 
 }
