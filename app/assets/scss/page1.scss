@@ -1,4 +1,5 @@
 $break-medium: 750px;
+$break-small: 405px;
 
 @keyframes appear {
   from {
@@ -20,6 +21,11 @@ body {
   left: 0;
   z-index: 10;
   margin: 15px;
+
+  @media screen and (max-width: $break-small) {
+    top:90vh;
+    left:70vw;
+  }
 }
 
 .background {
@@ -74,15 +80,21 @@ body {
     transition: width 0.2s;
 
     @media screen and (max-width: $break-medium) {
-      width: 80vw;
       border-left: 60vw solid teal;
-      border-bottom: 70px solid rgba(0, 0, 0, 0);
+    }
+
+    @media screen and (max-width: $break-small) {
+      border-left: 80vw solid teal;
     }
 
   }
 
   @media screen and (max-width: $break-medium) {
     width: 60vw;
+  }
+
+  @media screen and (max-width: $break-small) {
+    width: 80vw;
   }
 }
 
@@ -140,6 +152,11 @@ body {
 
   h1 {
     font-weight: lighter;
+  }
+
+  @media screen and (max-width: $break-small) {
+    width: 60vw;
+    top:-14%;
   }
 }
 
