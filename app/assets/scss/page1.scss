@@ -21,11 +21,6 @@ body {
   left: 0;
   z-index: 10;
   margin: 15px;
-
-  @media screen and (max-width: $break-small) {
-    top: 90vh;
-    left: 70vw;
-  }
 }
 
 .background {
