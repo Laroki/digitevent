@@ -82,7 +82,7 @@
         });
         this.dates = newDates;
 
-        // check if the dates are valide
+        // check if the dates are valid
         if (this.dateIsValid()) {
         // if its valid go fetch
           this.fetch(this.dates)
