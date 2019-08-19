@@ -98,7 +98,7 @@
           if (!date.day) {
             date.day = '?'
             this.errors.push({
-              message: 'le jour n\'est pas définit',
+              message: 'day is not set',
               index: index
             })
             valid = false
@@ -106,7 +106,7 @@
           // check if the month is valid
           if (!(date.month > 0 && date.month < 13)) {
             this.errors.push({
-              message: 'erreur sur le mois',
+              message: 'error on the month',
               index: index
             })
             valid = false
@@ -114,7 +114,7 @@
           // check if the day is valid 
           if (date.day < 0 || date.day > monthLength[date.month - 1]) {
             this.errors.push({
-              message: 'erreur sur le jour',
+              message: 'error on the day',
               index: index
             })
             valid = false
