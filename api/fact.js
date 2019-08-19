@@ -1,12 +1,30 @@
 class Fact {
+  
+  /**
+   * constructor 
+   * @param {Object} info - Info contains the day and the month of the fact
+   */
 
   constructor(info) {
-    this.errors=[];
+    this.errors = [];
     this.day = info.day;
     this.month = info.month
-    this.monthLength = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-    this.content="";
+    this.content = "";
   }
+
+  /**
+   * Give the static variable monthLength
+   * @return {Array} - return an array with the number of days in a month
+   */
+
+  static get monthLength() {
+    return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  }
+
+  /**
+   * Check if the date is valid 
+   * @return {Boolean} - return true if the date is valid
+   */
 
   dateIsValid() {
     // check month first
@@ -15,13 +33,11 @@ class Fact {
         error: 'le mois doit être compris entre 0 et 12'
       })
       return false;
-    }
-    else
-    {
-       // Then check day
-      if (this.day < 0 || this.day > this.monthLength[this.month - 1]) {
+    } else {
+      // Then check day
+      if (this.day < 0 || this.day > Fact.monthLength[this.month - 1]) {
         this.errors.push({
-          error: 'le jour doit être compris entre 0 et ' + this.monthLength[this.month - 1]
+          error: 'le jour doit être compris entre 0 et ' + Fact.monthLength[this.month - 1]
         })
         return false;
       }
@@ -30,16 +46,24 @@ class Fact {
     }
   }
 
-  setContent(content)
-  {
+  /**
+   * set content of the fact
+   * @param {String} content - Content of the fact
+   */
+
+  setContent(content) {
     this.content = content;
   }
 
-  json()
-  {
+  /**
+   * return fact in object format
+   * @return {Object} - An object containing fact
+   */
+
+  get json() {
     return {
-      day : this.day,
-      month:this.month,
+      day: this.day,
+      month: this.month,
       content: this.content
     }
   }
